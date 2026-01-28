@@ -1,3 +1,17 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # loads variables from .env into environment
+
+api_key = os.getenv("MISTRAL_API_KEY")
+if not api_key:
+    raise ValueError("MISTRAL_API_KEY not found. Put it in your .env file.")
+
+print("✅ API key loaded (not printing it for safety).")
+
+
+
+
 From helper import load_mistral_api_key
 api_key, dlai_endpoint = load_mistral_api_key(ret_key=True)
 import os
